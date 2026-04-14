@@ -1,6 +1,6 @@
 # Gerenciamento de Doações da SANEM
 
-## Equipe: Código de Schröndinger
+## 🖥️ Equipe: Código de Schröndinger
 * **Gabriel Tadeu**
 * **Mariana Veiga**
 * **Mohamed**
