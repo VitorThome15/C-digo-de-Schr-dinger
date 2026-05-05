@@ -29,32 +29,34 @@ const ReportView = React.forwardRef(({ data = [] }, ref) => {
         <PieChartBeneficiarios collectedCount={collectedCount} notCollectedCount={notCollectedCount} />
       </div>
 
-      <table style={{ width: "100%", borderCollapse: "collapse" }}>
-        <thead>
-          <tr>
-            <th style={{ border: "1px solid #ddd", padding: 6 }}>Data</th>
-            <th style={{ border: "1px solid #ddd", padding: 6 }}>Doador</th>
-            <th style={{ border: "1px solid #ddd", padding: 6 }}>Beneficiário</th>
-            <th style={{ border: "1px solid #ddd", padding: 6 }}>Tipo</th>
-            <th style={{ border: "1px solid #ddd", padding: 6 }}>Valor</th>
-            <th style={{ border: "1px solid #ddd", padding: 6 }}>Retirado</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((d, i) => (
-            <tr key={i}>
-              <td style={{ border: "1px solid #eee", padding: 6 }}>{d.date || "-"}</td>
-              <td style={{ border: "1px solid #eee", padding: 6 }}>{d.donor || "-"}</td>
-              <td style={{ border: "1px solid #eee", padding: 6 }}>{d.receiver || "-"}</td>
-              <td style={{ border: "1px solid #eee", padding: 6 }}>{d.type || "-"}</td>
-              <td style={{ border: "1px solid #eee", padding: 6 }}>
-                R$ {(d.amount || 0).toFixed(2)}
-              </td>
-              <td style={{ border: "1px solid #eee", padding: 6 }}>{d.collected ? "Sim" : "Não"}</td>
+      <div style={{ width: "100%", overflowX: "auto" }}>
+        <table style={{ width: "100%", minWidth: 860, borderCollapse: "collapse" }}>
+          <thead>
+            <tr>
+              <th style={{ border: "1px solid #ddd", padding: 6, width: 110, whiteSpace: "nowrap" }}>Data</th>
+              <th style={{ border: "1px solid #ddd", padding: 6 }}>Doador</th>
+              <th style={{ border: "1px solid #ddd", padding: 6 }}>Beneficiário</th>
+              <th style={{ border: "1px solid #ddd", padding: 6 }}>Tipo</th>
+              <th style={{ border: "1px solid #ddd", padding: 6, width: 110, whiteSpace: "nowrap" }}>Valor</th>
+              <th style={{ border: "1px solid #ddd", padding: 6, width: 90, whiteSpace: "nowrap" }}>Retirado</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {data.map((d, i) => (
+              <tr key={i}>
+                <td style={{ border: "1px solid #eee", padding: 6, whiteSpace: "nowrap" }}>{d.date || "-"}</td>
+                <td style={{ border: "1px solid #eee", padding: 6 }}>{d.donor || "-"}</td>
+                <td style={{ border: "1px solid #eee", padding: 6 }}>{d.receiver || "-"}</td>
+                <td style={{ border: "1px solid #eee", padding: 6 }}>{d.type || "-"}</td>
+                <td style={{ border: "1px solid #eee", padding: 6, whiteSpace: "nowrap" }}>
+                  R$ {(d.amount || 0).toFixed(2)}
+                </td>
+                <td style={{ border: "1px solid #eee", padding: 6, whiteSpace: "nowrap" }}>{d.collected ? "Sim" : "Não"}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 });
