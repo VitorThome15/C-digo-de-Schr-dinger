@@ -27,6 +27,7 @@
   font-size: 1rem;
   color: #444;
   cursor: pointer;
+  position: relative;
 }
 
 .userName {
@@ -64,3 +65,26 @@
   right: 0px;
   z-index: 2;
 } 
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  min-width: 140px;
+  z-index: 60;
+  overflow: hidden;
+}
+
+.dropdownItem {
+  padding: 10px 12px;
+  cursor: pointer;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.dropdownItem:hover {
+  background: #f5f5f5;
+}
