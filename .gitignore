@@ -28,3 +28,5 @@ backend/logs/
 *.log
 *.log.*
 *.gz
+
+*.env
